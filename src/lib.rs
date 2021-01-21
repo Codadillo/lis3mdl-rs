@@ -94,6 +94,15 @@ pub struct LIS3MDL<E, I: Read<Error = E> + Write<Error = E> + WriteRead<Error = 
     i2c: I,
 }
 
+impl<E, I: Clone + Read<Error = E> + Write<Error = E> + WriteRead<Error = E>> Clone for LIS3MDL<E, I> {
+    fn clone(&self) -> Self {
+        LIS3MDL {
+            address: self.address.clone(),
+            i2c: self.i2c.clone(),
+        }
+    }
+}
+
 impl<E, I: Read<Error = E> + Write<Error = E> + WriteRead<Error = E>> LIS3MDL<E, I> {
     pub fn new(mut i2c: I) -> Result<Option<Self>, E> {
         // Get the correct address for the LIS3MDL that is being used
