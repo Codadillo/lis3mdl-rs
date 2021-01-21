@@ -6,7 +6,7 @@ edition = "2018"
 license = "MIT OR Apache-2.0"
 description = "Driver for the LSM6D33 using an arbitrary i2c implementation."
 readme = "README.md"
-repository = "https://github.com/Codadillo/lsm6-rust"
+repository = "https://github.com/Codadillo/lis3mdl-rs"
 
 [dependencies]
 embedded-hal = "0.2.4"
