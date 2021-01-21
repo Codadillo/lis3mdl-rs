@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Codadillo <leoconr@nuevaschool.org>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
-description = "Driver for the LSM6D33 using an arbitrary i2c implementation."
+description = "Driver for the LIS3MDL using an arbitrary i2c implementation."
 readme = "README.md"
 repository = "https://github.com/Codadillo/lis3mdl-rs"
 
