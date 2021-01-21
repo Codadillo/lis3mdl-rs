@@ -1,3 +1,5 @@
+#![no_std]
+
 pub mod registers;
 
 use embedded_hal::blocking::i2c::{Read, Write, WriteRead};
@@ -114,6 +116,7 @@ impl<E, I: Read<Error = E> + Write<Error = E> + WriteRead<Error = E>> LIS3MDL<E,
     pub fn init_default(&mut self) -> Result<(), E> {
         self.set_xy_mode_and_data_rate(AxisMode::HighPerformance, OutputDataRate::Hz10)?;
         self.set_z_mode(AxisMode::HighPerformance)?;
+        self.set_full_scale(FullScale::Four)?;
         self.set_operating_mode(OperatingMode::ContinuousConversion)
     }
 
